@@ -1,11 +1,10 @@
 (defpackage #:cl-raylib
-  (:use :cl :cffi))
+  (:use :cl :cffi)
+  (:import-from #:vectors
+    :vector2
+    :make-vector2
+    :add-vector2
+    :sub-vector2
+    :get-magnitude
+  ))
 
-(defpackage #:cl-raylib.vectors
-  (:use :cl #:cl-raylib)
-    (:export :vector2
-      :make-vector2
-      :add-vector2
-      :sub-vector2
-      :get-magnitude
-      :test-vector2)) 

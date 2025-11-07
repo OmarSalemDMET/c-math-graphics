@@ -7,7 +7,7 @@
   :components ((:module "src"
                :serial t 
                :components 
-                ((:file "package")
-                  (:file "vectors" :depends-on ("package"))
-                  (:file "main" :depends-on ("package"))
+                ((:file "vectors")
+                 (:file "package" :depends-on ("vectors"))
+                 (:file "main" :depends-on ("package"))
                ))))

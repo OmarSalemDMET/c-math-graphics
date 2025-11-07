@@ -1,1 +1,1 @@
-[{"pkgName":"cl-user","text":"(ql:quickload :cffi)"},{"pkgName":"cl-user","text":"(ql:quickload cffi)"},{"pkgName":"cl-user","text":"(load \"./cl-raylib.asd\")"}]
+[{"pkgName":"cl-user","text":"(defun print-lisp-version ()   (let ((version (lisp-implementation-version)))   (format t \"Lisp Implementation Version: ~a~%\\n\" version)))"},{"pkgName":"cl-user","text":"(ql:quickload :cffi)"},{"pkgName":"cl-user","text":"(ql:quickload cffi)"},{"pkgName":"cl-user","text":"(load \"./cl-raylib.asd\")"}]

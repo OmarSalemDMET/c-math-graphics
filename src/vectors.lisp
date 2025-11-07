@@ -1,4 +1,13 @@
-(in-package :cl-raylib.vectors)
+(defpackage #:vectors
+  (:use :cl)
+    (:export :vector2
+      :make-vector2
+      :add-vector2
+      :sub-vector2
+      :get-magnitude
+      :test-vector2)) 
+
+(in-package #:vectors)
 
 (defclass vector2 ()
   ((x :accessor x :initarg :x :initform 0.0)

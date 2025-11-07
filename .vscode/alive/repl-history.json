@@ -1,0 +1,1 @@
+[{"pkgName":"cl-user","text":"(ql:quickload :cffi)"},{"pkgName":"cl-user","text":"(ql:quickload cffi)"},{"pkgName":"cl-user","text":"(load \"./cl-raylib.asd\")"}]

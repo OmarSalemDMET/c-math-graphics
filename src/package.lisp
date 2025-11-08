@@ -1,5 +1,5 @@
-(defpackage #:cl-raylib
-  (:use :cl :cffi)
+(defpackage #:cl-game
+  (:use :cl)
   (:import-from #:vectors
     :vector2
     :make-vector2

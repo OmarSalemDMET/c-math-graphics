@@ -1,4 +1,4 @@
-(in-package :cl-raylib)
+(in-package :cl-game)
 
 (defun print-lisp-version ()
   (let ((version (lisp-implementation-version)))
@@ -11,4 +11,4 @@
   (format t "\n \n Hello, CL-Raylib!~%")
   (print-lisp-version)
   (vectors:test-vector2))
-(sb-ext:save-lisp-and-die "cl-raylib" :executable t :toplevel #'main)
+(sb-ext:save-lisp-and-die "cl-game" :executable t :toplevel #'main)

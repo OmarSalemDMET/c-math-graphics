@@ -3,7 +3,7 @@
   :serial t
   :license "MIT"
   :author "Omar El-Adly"
-  :depends-on (:cl-raylib)
+  :depends-on (:cl-raylib :cl-json)
   :components ((:module "src"
                :serial t 
                :components 

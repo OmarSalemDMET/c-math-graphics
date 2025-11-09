@@ -1,5 +1,5 @@
 (defpackage :cl-game
-  (:use :cl :cl-raylib)
+  (:use :cl :cl-raylib :cl-json)
   (:import-from :vectors2d
     :vector2d
     :make-vector2d

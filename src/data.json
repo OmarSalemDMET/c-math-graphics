@@ -1,0 +1,32 @@
+{
+    "flowers": [
+        {
+            "name": "Rose",
+            "color": ["red", "pink", "white", "yellow"],
+            "bloomSeason": "spring",
+            "petalCount": 30,
+            "lifespan": "5-7 days"
+        },
+        {
+            "name": "Sunflower",
+            "color": ["yellow", "orange"],
+            "bloomSeason": "summer",
+            "petalCount": 34,
+            "lifespan": "8-12 days"
+        },
+        {
+            "name": "Tulip",
+            "color": ["red", "yellow", "pink", "purple"],
+            "bloomSeason": "spring",
+            "petalCount": 6,
+            "lifespan": "7-10 days"
+        },
+        {
+            "name": "Lily",
+            "color": ["white", "purple"],
+            "bloomSeason": "spring",
+            "petalCount": 34,
+            "lifespan": "4-6 days"
+        }
+    ]
+}

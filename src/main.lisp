@@ -7,10 +7,20 @@
 (defun print-test ()
   (format t "This is a test from CL-Raylib.~%"))
 
+(defun read-json-test()
+  (let* ((filepath (merge-pathnames "src/data.json" (uiop:getcwd)))
+         (json-data (with-open-file (stream filepath :direction :input)
+                     (let ((content (make-string (file-length stream))))
+                       (read-sequence content stream)
+                       content))))
+    (let ((parsed-json (cl-json:decode-json-from-string json-data)))
+      (format t "Parsed JSON Data: ~a~%" parsed-json))))
+
 (defun game-window ()
   (let ((screen-width 1024)
         (screen-height 560))
-        (with-window (screen-width screen-height "Main Game Window")
+        (with-window 
+          (screen-width screen-height "Main Game Window")
           (set-target-fps 60)
           (loop 
             until (window-should-close)
@@ -22,6 +32,7 @@
 
 (defun main ()
   (format t "\n \n Hello, CL-Raylib!~%")
+  (read-json-test)
   (print-lisp-version)
   (vectors2d:test-vector2d) ; Removed due to undefined function error
   (game-window))

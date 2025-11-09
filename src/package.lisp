@@ -1,10 +1,10 @@
-(defpackage #:cl-game
-  (:use :cl)
-  (:import-from #:vectors
-    :vector2
-    :make-vector2
-    :add-vector2
-    :sub-vector2
+(defpackage :cl-game
+  (:use :cl :cl-raylib)
+  (:import-from :vectors2d
+    :vector2d
+    :make-vector2d
+    :add-vector2d
+    :sub-vector2d
     :get-magnitude
-  ))
+    :test-vector2d))
 

@@ -3,11 +3,11 @@
   :serial t
   :license "MIT"
   :author "Omar El-Adly"
-  :depends-on (:sdl2)
+  :depends-on (:cl-raylib)
   :components ((:module "src"
                :serial t 
                :components 
-                ((:file "vectors")
-                 (:file "package" :depends-on ("vectors"))
+                ((:file "vectors2d")
+                 (:file "package" :depends-on ("vectors2d"))
                  (:file "main" :depends-on ("package"))
                ))))

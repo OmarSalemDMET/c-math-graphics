@@ -7,14 +7,11 @@
 (defun print-test ()
   (format t "This is a test from CL-Raylib.~%"))
 
-(defun read-json-test()
-  (let* ((filepath (merge-pathnames "src/data.json" (uiop:getcwd)))
-         (json-data (with-open-file (stream filepath :direction :input)
-                     (let ((content (make-string (file-length stream))))
-                       (read-sequence content stream)
-                       content))))
-    (let ((parsed-json (cl-json:decode-json-from-string json-data)))
-      (format t "Parsed JSON Data: ~a~%" parsed-json))))
+(defun read-json-test ()
+  (with-open-file (stream "src/data.json")
+    (let ((json-data (uiop:read-file-string stream)))
+      (format t "Parsed JSON Data: ~a~%" 
+              (cl-json:decode-json-from-string json-data)))))
 
 (defun game-window ()
   (let ((screen-width 1024)

@@ -1,0 +1,1 @@
+sbcl --load cl-game.asd --eval '(asdf:load-system :cl-game)' --eval '(main)' --quit

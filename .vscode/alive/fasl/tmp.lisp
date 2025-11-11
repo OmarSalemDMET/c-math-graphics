@@ -1,36 +1,21 @@
-(in-package :cl-game)
-(require :cl-raylib)
-(defun print-lisp-version ()
-  (let ((version (lisp-implementation-version)))
-  (format t "Lisp Implementation Version: ~a~%" version)))
+(defpackage :opponent-class
+  (:use :cl :cl-raylib :3d-vectors))
 
-(defun print-test ()
-  (format t "This is a test from CL-Raylib.~%"))
+(in-package :opponent-class)
 
-(defun read-json-test ()
-  (with-open-file (stream "src/data.json")
-    (let ((json-data (uiop:read-file-string stream)))
-      (format t "Parsed JSON Data: ~a~%" 
-              (cl-json:decode-json-from-string json-data)))))
+(defclass opponent ()
+  ((name :accessor name :initarg :name :initform "Unnamed Opponent")
+   (stamina :accessor stamina :initarg :stamnina :initform 100)
+   (pos :accessor pos :initarg :pos :initform (vec2 0.0 0.0))))
 
-(defun game-window ()
-  (let ((screen-width 1024)
-        (screen-height 560))
-        (with-window 
-          (screen-width screen-height "Main Game Window")
-          (set-target-fps 60)
-          (loop 
-            until (window-should-close)
-            do (with-drawing
-                 (clear-background :raywhite)
-                 (draw-fps 20 20)
-                 (draw-text "Main Menue!" (- (/ screen-width 2) 40) (/ screen-height 2)  20 :lightgray)
-                 (end-drawing))))))
+(defmethod print-object ((o opponent) stream)
+  (format stream "#<Opponent ~a, Stamina: ~a, Position: ~a>" 
+          (name o) 
+          (stamina o) 
+          (pos o)))
 
-(defun main ()
-  (format t "\n \n Hello, CL-Raylib!~%")
-  (read-json-test)
-  (print-lisp-version)
-  (vectors2d:test-vector2d) ; Removed due to undefined function error
-  (game-window))
-(sb-ext:save-lisp-and-die "cl-game" :executable t :toplevel #'main)
+(defmethod get-location ((o opponent))
+  (pos o))
+
+(defun make-opponent (name stamina pos)
+  (make-instance 'opponent :name name :stamina stamina :pos pos))

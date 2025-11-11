@@ -31,6 +31,6 @@
   (format t "\n \n Hello, CL-Raylib!~%")
   (read-json-test)
   (print-lisp-version)
-  (vectors2d:test-vector2d) ; Removed due to undefined function error
+  (vectors2d:test-vector2d)
   (game-window))
 (sb-ext:save-lisp-and-die "cl-game" :executable t :toplevel #'main)

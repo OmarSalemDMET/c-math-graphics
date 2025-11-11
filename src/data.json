@@ -11,6 +11,6 @@
         {
             "name": "Tulip",
             "color": ["red", "yellow", "pink", "purple"]
-        },
+        }
     ]
 }

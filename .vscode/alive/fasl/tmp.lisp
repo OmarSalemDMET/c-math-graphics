@@ -1,5 +1,9 @@
 (defpackage :opponent-class
-  (:use :cl :cl-raylib :3d-vectors))
+  (:use :cl :cl-raylib :3d-vectors)
+  (:export :opponent
+           :make-opponent
+           :opponent-move
+           :print-object))
 
 (in-package :opponent-class)
 
@@ -14,8 +18,7 @@
           (stamina o) 
           (pos o)))
 
-(defmethod get-location ((o opponent))
-  (pos o))
+(defmethod opponent-move ((o opponent) delta))
 
 (defun make-opponent (name stamina pos)
   (make-instance 'opponent :name name :stamina stamina :pos pos))

@@ -9,6 +9,7 @@
                :components 
                 ((:file "vectors2d")
                  (:file "opponent-class")
+                 (:file "moving-opponent-class" :depends-on ("opponent-class"))
                  (:file "package" :depends-on ("vectors2d"))
                  (:file "main" :depends-on ("package"))
                ))))
